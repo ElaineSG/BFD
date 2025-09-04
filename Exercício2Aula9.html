@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Fluxo - Exemplo</title>
+</head>
+<body>
+  <h1>Resultado dos Alunos</h1>
+  <ul id="lista"></ul>
+
+  <script>
+    let alunos = [
+      { nome: "Ana", nota: 8 },
+      { nome: "Carlos", nota: 5 },
+      { nome: "João", nota: 7 }
+    ];
+
+    let lista = document.getElementById("lista");
+
+    for (let aluno of alunos) {
+      let item = document.createElement("li");
+
+      if (aluno.nota >= 6) {
+        item.textContent = aluno.nome + " - Aprovado ✅";
+      } else {
+        item.textContent = aluno.nome + " - Reprovado ❌";
+      }
+
+      lista.appendChild(item);
+    }
+  </script>
+</body>
+</html>
